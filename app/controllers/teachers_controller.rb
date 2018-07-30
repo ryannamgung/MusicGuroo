@@ -1,4 +1,7 @@
 class TeachersController < ApplicationController
+
+  before_action :set_teacher, only: [:edit, :show, :update, :destroy]
+
   def index
     @teachers = Teacher.all
   end
@@ -8,6 +11,12 @@ class TeachersController < ApplicationController
   end
 
   def create
+    @teacher = Teacher.new(teacher_params)
+    if @teacher.save
+      redirect_to teacher_path(@teacher)
+    else
+      render[:new]
+    end
   end
 
   def show
@@ -17,18 +26,25 @@ class TeachersController < ApplicationController
   end
 
   def update
+    if @teacher.update(teacher_params)
+      redirect_to teacher_path(@teacher)
+    else
+      render[:edit]
+    end
   end
 
-  def delete
+  def destroy
+    @teacher.destroy
+    redirect_to teachers_path
   end
 
   private
 
   def teacher_params
-    Teacher.find_by(id: params[:id])
+    params.require(:teacher).permit(:name, :bio, :philosophy)
   end
 
   def set_teacher
-    params.require(:teacher).permit(:name, :bio)
+    @teacher = Teacher.find_by(id: params[:id])
   end
 end

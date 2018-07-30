@@ -1,0 +1,10 @@
+<h1>Teachers</h1>
+
+<% @teachers.each do |t| %>
+<h3>Name:</h3>
+<%= t.name %>
+<h3>Bio:</h3>
+<%= t.bio %>
+<h3>Teaching Philosophy:</h3>
+<%= t.philosophy %>
+<% end %>
