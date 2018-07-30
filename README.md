@@ -1,3 +1,27 @@
+TO-DO:
+
+##--------TEACHER---------##
+Full CRUD for teacher
+
+##--------STUDENT---------##
+Full CRUD for student
+
+##--------INSTRUMENT---------##
+Teacher will be able to select which instruments they are using for their lesson
+If it doesn't exist then we specify "other"
+
+##--------LESSONS---------##
+Full CRUD for teacher
+Student only has access to R
+
+##--------BOOKING---------##
+IDEALLY: teacher will be able to give an update of the available times they have
+Students create the booking and DESTROY
+////update the booking(change the booking schedule)
+
+##--------REVIEWS---------##
+Full CRUD for student
+Teacher can R
 
 
 # README
