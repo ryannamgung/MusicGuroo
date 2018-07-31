@@ -1,0 +1,21 @@
+<h1>Edit Your Profile</h1>
+<%# TODO: STYLE BETTER %>
+<%= form_for @teacher do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name%>
+  <br>
+  <br>
+  <%= f.label :bio %>
+  <%= f.text_area :bio%>
+  <br>
+  <br>
+  <%= f.label :philosophy %>
+  <%= f.text_area :philosophy%>
+
+  <%= f.submit %>
+<% end %>
+<br>
+
+<footer>
+  <%= link_to 'My Profile', @teacher %>
+</footer>

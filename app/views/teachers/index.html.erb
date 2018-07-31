@@ -2,9 +2,14 @@
 
 <% @teachers.each do |t| %>
 <h3>Name:</h3>
-<%= t.name %>
+<%= link_to t.name, t %>
 <h3>Bio:</h3>
 <%= t.bio %>
 <h3>Teaching Philosophy:</h3>
 <%= t.philosophy %>
 <% end %>
+
+<footer>
+  <%= link_to 'All Teachers', teachers_path %>
+  <%= link_to 'All Lessons', lessons_path %>
+</footer>
