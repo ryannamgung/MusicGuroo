@@ -1,0 +1,26 @@
+<h1><%= @student.name %></h1>
+
+<h2>My Lessons:</h2>
+
+<ul>
+  <% @student.bookings.each do |b| %>
+  <li>
+  <h3>Lesson: </h3>
+  <%= b.lesson.instrument.name %>
+  <h3>Teacher: </h3>
+  <%= b.teacher.name %>
+  <h3>Time: </h3>
+  <%= b.time %>
+  <h3>Cost:</h3>
+  <%= b.cost %>
+  </li>
+  <% end %>
+</ul>
+
+
+<footer>
+  <%= link_to 'Edit Profile', edit_student_path(@student) %>
+  <%= link_to 'Delete My Profile',  { action: :destroy, id: @student.id }, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= link_to 'All Teachers', teachers_path %>
+  <%= link_to 'All Lessons', lessons_path %>
+</footer>

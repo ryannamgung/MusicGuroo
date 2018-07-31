@@ -1,5 +1,7 @@
 <h1>Teachers</h1>
 
+<%= flash[:notice] %>
+
 <% @teachers.each do |t| %>
 <h3>Name:</h3>
 <%= link_to t.name, t %>

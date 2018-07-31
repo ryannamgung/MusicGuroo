@@ -1,0 +1,12 @@
+<h1>Edit Your Profile</h1>
+<%# TODO: STYLE BETTER %>
+<%= form_for @student do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name%>
+  <%= f.submit %>
+<% end %>
+<br>
+
+<footer>
+  <%= link_to 'My homepage', @student %>
+</footer>

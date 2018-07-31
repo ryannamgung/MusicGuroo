@@ -1,0 +1,7 @@
+<h1>Sign up as a Student at MusicGuroo</h1>
+<%# TODO: STYLE BETTER %>
+<%= form_for @student do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name%>
+  <%= f.submit 'Join Now!' %>
+<% end %>

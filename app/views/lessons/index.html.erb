@@ -1,1 +1,7 @@
-HELLO FROM ALL LESSONS
+<h1>HELLO FROM ALL LESSONS</h1>
+
+<ul>
+  <% @lessons.each do |l| %>
+  <li><%= l.instrument.name %></li>
+  <% end %>
+</ul>
