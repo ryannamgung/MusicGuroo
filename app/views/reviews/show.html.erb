@@ -1,4 +1,7 @@
 <h1>Your review</h1>
 
+<h2>Lesson:</h2>
+<%= @review.lesson.instrument.name %>
+<%= @review.teacher.name %>
 <div>Rating: <%= @review.rating %></div>
-<div>Review: <%= @review.review %></div>
+<div>Review: <%= @review.description %></div>

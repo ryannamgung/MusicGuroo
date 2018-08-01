@@ -8,13 +8,12 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    #associate this review with the booking
-    #only student should be able to leave a review
     @review = Review.new(review_params)
+
     if @review.save
       redirect_to review_path(@review)
     else
-      render[:new]
+      redirect_to booking_path(@review.booking)
     end
   end
 
@@ -28,7 +27,7 @@ class ReviewsController < ApplicationController
     if @review.update(review_params)
       redirect_to review_path(@review)
     else
-      render[:edit]
+      render :edit
     end
   end
 
@@ -41,7 +40,7 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:rating, :review, :booking_id)
+    params.require(:review).permit(:rating, :description, :booking_id)
   end
   #
   def set_review

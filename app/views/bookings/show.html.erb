@@ -4,3 +4,16 @@
 <%= @booking.teacher.name %>
 <%= @booking.lesson.instrument.name %>
 <%= @booking.time %>
+
+
+<%= form_for @review do |f| %>
+  <%= f.label :rating %>
+  <%= f.number_field :rating, min: 1, max: 5 %><br><br>
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+  <%= f.hidden_field :booking_id, :value => @booking.id %>
+  <%= f.submit %>
+<% end %>
+
+
+<%= link_to 'My profile', student_path(current_user) %>

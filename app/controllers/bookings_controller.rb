@@ -11,11 +11,12 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to booking_path(@booking)
     else
-      render[:new]
+      render :new
     end
   end
 
   def show
+    @review = Review.new
   end
 
   def edit
@@ -25,7 +26,7 @@ class BookingsController < ApplicationController
     if @booking.update(booking_params)
       redirect_to booking_path(@booking)
     else
-      render[:edit]
+      render :edit
     end
   end
 
