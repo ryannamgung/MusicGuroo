@@ -7,9 +7,6 @@ class BookingsController < ApplicationController
   end
 
   def create
-    byebug
-    #associate this booking with the booking
-    #only student should be able to leave a booking
     @booking = Booking.new(booking_params)
     if @booking.save
       redirect_to booking_path(@booking)
@@ -41,7 +38,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:lesson_id, :student_id, :time, :cost)
+    params.require(:booking).permit(:lesson_id, :student_id, :time)
   end
   #
   def set_booking
