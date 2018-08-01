@@ -1,4 +1,4 @@
-<h1> Lesson Edit Page</h1>
+<h1> Lesson Creation Page</h1>
 <ul>
 <%= form_for @lesson do |f| %>
   <li><%= f.label :instrument %></li>
@@ -9,7 +9,7 @@
 
   <li><%= f.label :genre %></li>
   <%= f.select(:genre, @lesson.genres) %>
-
+  
   <%= f.submit %>
 <% end %>
 </ul>

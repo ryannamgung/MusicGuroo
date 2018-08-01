@@ -1,9 +1,9 @@
 TO-DO:
 
-##--------TEACHER---------##
+##--------TEACHER---------## DONE
 Full CRUD for teacher
 
-##--------STUDENT---------##
+##--------STUDENT---------## DONE
 Full CRUD for student
 
 ##--------INSTRUMENT---------##
@@ -13,6 +13,7 @@ If it doesn't exist then we specify "other"
 ##--------LESSONS---------##
 Full CRUD for teacher
 Student only has access to R
+*TODO* pass in teacher_id through authentication somehow?????????
 
 ##--------BOOKING---------##
 IDEALLY: teacher will be able to give an update of the available times they have

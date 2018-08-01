@@ -1,6 +1,6 @@
 class LessonsController < ApplicationController
   before_action :set_teacher, only: [:index_teacher_lessons]
-  before_action :set_lesson, only: [:show]
+  before_action :set_lesson, only: [:show, :edit, :update]
   def index #all lessons for that particular teacher
     @lessons = Lesson.all
   end
@@ -10,6 +10,31 @@ class LessonsController < ApplicationController
   end
 
   def show
+  end
+
+  def new
+    @lesson = Lesson.new
+  end
+
+  def create
+    byebug
+    @lesson = Lesson.new(lesson_params)
+    if @lesson.save
+      redirect_to lesson_path(@lesson)
+    else
+      render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @lesson.update(lesson_params)
+      redirect_to lesson_path(@lesson)
+    else
+      render :edit
+    end
   end
 
   private

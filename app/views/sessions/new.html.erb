@@ -1,0 +1,16 @@
+<h1>LOGIN</h1>
+
+<%= form_tag sessions_path do %>
+  <%= label_tag "Username" %>
+  <%= text_field_tag :username %><br><br>
+  <%= label_tag "Password" %>
+  <%= password_field_tag :password %><br><br>
+  <%= radio_button_tag 'user_type', 'Student', checked = true %>
+  <%= label_tag "Student" %><br><br>
+  <%= radio_button_tag 'user_type', 'Teacher' %>
+  <%= label_tag "Teacher" %><br><br>
+
+
+  <%= submit_tag "Sign In" %>
+
+<% end %>

@@ -1,14 +1,23 @@
 <h1>Become a Teacher at MusicGuroo</h1>
 <%# TODO: STYLE BETTER %>
 <%= form_for @teacher do |f| %>
+
+  <%= f.label :username %>
+  <%= f.text_field :username%>
+<br>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+<br>
   <%= f.label :name %>
   <%= f.text_field :name%>
-  <br>
+<br>
   <%= f.label :bio %>
   <%= f.text_area :bio%>
-  <br>
+<br>
   <%= f.label :philosophy %>
   <%= f.text_area :philosophy%>
+
+
 
   <%= f.submit 'Join Now!' %>
 <% end %>
