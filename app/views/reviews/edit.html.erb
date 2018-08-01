@@ -1,5 +1,5 @@
 <h1>Edit Your Profile</h1>
-<%= form_for current_user do |f| %>
+<%= form_for @review do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name%>
   <%= f.submit %>
@@ -7,5 +7,5 @@
 <br>
 
 <footer>
-  <%= link_to 'My homepage', current_user %>
+  <%= link_to 'My homepage', @review %>
 </footer>

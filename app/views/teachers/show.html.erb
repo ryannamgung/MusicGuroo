@@ -1,10 +1,10 @@
-<h1><%= @teacher.name %></h1>
+<h1><%= current_user.name %></h1>
 
 <h2>Bio:</h2>
-<p><%= @teacher.bio %></p>
+<p><%= current_user.bio %></p>
 
 <h2>Philosophy</h2>
-<p><%= @teacher.philosophy %></p>
+<p><%= current_user.philosophy %></p>
 
 <h2>My Lessons:</h2>
 
@@ -15,7 +15,7 @@
     <th>Difficulty</th>
   </tr>
   <tr>
-    <% @teacher.lessons.each do |lesson| %>
+    <% current_user.lessons.each do |lesson| %>
       <td><%= link_to lesson.instrument.name, lesson %></td>
       <td><%= lesson.genre.titleize %></td>
       <td><%= lesson.difficulty.titleize %></td>
@@ -25,8 +25,8 @@
 
 
 <footer>
-  <%= link_to 'Edit Profile', edit_teacher_path(@teacher) %>
-  <%= link_to 'Delete My Profile',  { action: :destroy, id: @teacher.id }, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= link_to 'Edit Profile', edit_teacher_path(current_user) %>
+  <%= link_to 'Delete My Profile',  { action: :destroy, id: current_user.id }, method: :delete, data: { confirm: 'Are you sure?' } %>
   <%= link_to 'All Teachers', teachers_path %>
   <%= link_to 'All Lessons', lessons_path %>
 </footer>

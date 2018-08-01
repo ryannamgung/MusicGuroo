@@ -1,0 +1,11 @@
+<h1>Post a review of your lesson</h1>
+<%# TODO: STYLE BETTER %>
+<%= form_for @review do |f| %>
+  <%= f.label :rating %>
+  <%= f.number_field :rating%>
+
+  <%= f.label :review %>
+  <%= f.area_field :review%>
+  
+  <%= f.submit%>
+<% end %>

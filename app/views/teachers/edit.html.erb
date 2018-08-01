@@ -1,6 +1,6 @@
 <h1>Edit Your Profile</h1>
 <%# TODO: STYLE BETTER %>
-<%= form_for @teacher do |f| %>
+<%= form_for current_user do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name%>
   <br>
@@ -17,5 +17,5 @@
 <br>
 
 <footer>
-  <%= link_to 'My Profile', @teacher %>
+  <%= link_to 'My Profile', current_user %>
 </footer>
