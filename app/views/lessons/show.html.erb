@@ -6,6 +6,9 @@
 
 <h1>FORM TO BOOK</h1>
 
+
+<%= link_to "edit lesson", edit_lesson_path(@lesson) %>
+
 <%= form_for @booking do |f| %>
   <%= f.select :time, @lesson.teacher.available_slots %>
   <%= f.hidden_field :lesson_id, :value => @lesson.id %>

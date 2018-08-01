@@ -2,6 +2,6 @@
 
 <ul>
   <% @lessons.each do |l| %>
-  <li><%= l.instrument.name %></li>
+  <li><%= link_to l.instrument.name, lesson_path(l) %></li>
   <% end %>
 </ul>

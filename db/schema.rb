@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_01_175019) do
+ActiveRecord::Schema.define(version: 2018_08_01_211313) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer "lesson_id"
     t.integer "student_id"
     t.datetime "time"
-    t.integer "cost"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["lesson_id"], name: "index_bookings_on_lesson_id"
@@ -36,6 +35,7 @@ ActiveRecord::Schema.define(version: 2018_08_01_175019) do
     t.string "genre"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "cost"
     t.index ["instrument_id"], name: "index_lessons_on_instrument_id"
     t.index ["teacher_id"], name: "index_lessons_on_teacher_id"
   end
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 2018_08_01_175019) do
     t.datetime "updated_at", null: false
     t.string "username"
     t.string "password_digest"
+    t.string "photo_url", default: "https://viterbi.usc.edu/directory/images/noprofile.png"
   end
 
 end

@@ -12,6 +12,10 @@
   <li><%= f.label :genre %></li>
   <%= f.select(:genre, @lesson.genres) %>
 
+  <li><%= f.label :price %></li>
+  <%= f.number_field :cost %>
+
+
   <%= f.hidden_field :teacher_id, :value => current_user.id %>
 
   <%= f.submit %>

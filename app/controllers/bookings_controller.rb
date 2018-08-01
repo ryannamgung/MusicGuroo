@@ -32,7 +32,11 @@ class BookingsController < ApplicationController
   def destroy
     @booking.destroy
     flash[:notice] = 'Booking succesfully deleted!'
-    redirect_to teachers_path
+    if session[:logged_in_teacher_id]
+      redirect_to teacher_path(current_user)
+    else
+      redirect_to student_path(current_user)
+    end
   end
 
   private
@@ -40,7 +44,7 @@ class BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit(:lesson_id, :student_id, :time)
   end
-  #
+
   def set_booking
     @booking = Booking.find_by(id: params[:id])
   end

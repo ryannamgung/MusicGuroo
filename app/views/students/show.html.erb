@@ -1,6 +1,6 @@
 <h1><%= current_user.name %></h1>
 
-<h2>My Lessons:</h2>
+<h2>My Bookings:</h2>
 
 <ul>
   <% current_user.bookings.each do |b| %>
@@ -12,8 +12,9 @@
   <h3>Time: </h3>
   <%= b.time %>
   <h3>Cost:</h3>
-  <%= b.cost %>
+  <%= b.lesson.cost %>
   </li>
+  <%= button_to 'Delete booking', b, method: :delete %>
   <% end %>
 </ul>
 
