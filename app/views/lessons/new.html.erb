@@ -1,3 +1,5 @@
+<%# TODO: add select-cost to form (and edit relevant schema parts) %>
+
 <h1> Lesson Creation Page</h1>
 <ul>
 <%= form_for @lesson do |f| %>
@@ -9,7 +11,9 @@
 
   <li><%= f.label :genre %></li>
   <%= f.select(:genre, @lesson.genres) %>
-  
+
+  <%= f.hidden_field :teacher_id, :value => current_user.id %>
+
   <%= f.submit %>
 <% end %>
 </ul>

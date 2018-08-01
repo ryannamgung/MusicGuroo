@@ -7,11 +7,8 @@
 <h1>FORM TO BOOK</h1>
 
 <%= form_for @booking do |f| %>
-  <%= f.select :time, @lesson.teacher.calendar %>
+  <%= f.select :time, @lesson.teacher.available_slots %>
   <%= f.hidden_field :lesson_id, :value => @lesson.id %>
   <%= f.hidden_field :student_id, :value => current_user.id %>
   <%= f.submit %>
 <% end %>
-
-<br>
-<%= link_to 'Book This Lesson', new_booking_path %>

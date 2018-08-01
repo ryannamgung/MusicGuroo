@@ -14,7 +14,7 @@ class Teacher < ApplicationRecord
   has_many :reviews, through: :bookings
   has_many :students, through: :bookings
 
-  def calendar
+  def all_slots
     date = DateTime.now.next
     slots = []
     30.times do
@@ -28,23 +28,14 @@ class Teacher < ApplicationRecord
     slots
   end
 
-  def all_slots
-    calendar
-  end
-
   def booked_slots
+    self.bookings.map { |booking| booking.time }
   end
 
   def available_slots
-    all_slots - booked_slots
-  end
-
-  def available_slots
-    booked_slots = @lesson.teacher.bookings.map { |booking| booking.time }
-
-    calendar.select do |slot|
+    all_slots.select do |slot|
       !booked_slots.include?(slot)
     end
-
   end
+
 end

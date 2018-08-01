@@ -17,11 +17,12 @@ class TeachersController < ApplicationController
       session[:logged_in_teacher_id] = @teacher.id
       redirect_to teacher_path(@teacher)
     else
-      render[:new]
+      render :new
     end
   end
 
   def show
+    @teacher = Teacher.find(params[:id])
   end
 
   def edit

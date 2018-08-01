@@ -1,10 +1,10 @@
-<h1><%= current_user.name %></h1>
+<h1><%= @teacher.name %></h1>
 
 <h2>Bio:</h2>
-<p><%= current_user.bio %></p>
+<p><%= @teacher.bio %></p>
 
 <h2>Philosophy</h2>
-<p><%= current_user.philosophy %></p>
+<p><%= @teacher.philosophy %></p>
 
 <h2>My Lessons:</h2>
 
@@ -15,7 +15,7 @@
     <th>Difficulty</th>
   </tr>
   <tr>
-    <% current_user.lessons.each do |lesson| %>
+    <% @teacher.lessons.each do |lesson| %>
       <td><%= link_to lesson.instrument.name, lesson %></td>
       <td><%= lesson.genre.titleize %></td>
       <td><%= lesson.difficulty.titleize %></td>
