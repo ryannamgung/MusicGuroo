@@ -1,10 +1,11 @@
 class SessionsController < ApplicationController
-  skip_before_action :authorized, only: [:new, :create]
+  skip_before_action :authorized_student, only: [:new, :create]
+  skip_before_action :authorized_teacher, only: [:new, :create]
+
   def new
   end
 
   def create
-
     if params[:user_type] == "Teacher"
       @user = Teacher.find_by(username: params[:username])
       if @user && @user.authenticate(params[:password])

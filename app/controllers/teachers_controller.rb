@@ -1,5 +1,6 @@
 class TeachersController < ApplicationController
-  skip_before_action :authorized, only: [:new, :create]
+  skip_before_action :authorized_teacher, only: [:new, :create]
+  skip_before_action :authorized_student, only: [:new, :create, :show, :edit]
 
   # before_action :set_teacher, only: [:edit, :show, :update, :destroy]
   #before_action :require_teacher_login
@@ -26,6 +27,12 @@ class TeachersController < ApplicationController
   end
 
   def edit
+    if session[:logged_in_teacher_id].to_s == params[:id]
+      render :edit
+    else
+      flash[:message] = "You do not have acccess."
+      redirect_to teacher_path(current_user)
+    end
   end
 
   def update

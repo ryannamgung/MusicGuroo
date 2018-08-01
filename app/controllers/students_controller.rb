@@ -1,5 +1,6 @@
 class StudentsController < ApplicationController
-  skip_before_action :authorized, only: [:new, :create]
+  skip_before_action :authorized_student, only: [:new, :create]
+  skip_before_action :authorized_teacher, only: [:new, :create]
 
   # before_action :set_student, only: [:edit, :show, :update, :destroy]
   #before_action :require_Student_login

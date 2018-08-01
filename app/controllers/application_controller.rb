@@ -1,5 +1,9 @@
 class ApplicationController < ActionController::Base
-  before_action :authorized
+
+  before_action :authorized_teacher
+  before_action :authorized_student
+
+  # before_action :authorized
   helper_method :logged_in?, :current_user
 
   def current_user
@@ -16,10 +20,18 @@ class ApplicationController < ActionController::Base
     !!current_user #coerce the current_user into a boolean
   end
 
-  def authorized
-    unless logged_in?
-      flash[:notice] = "You must be logged in to see this page"
+  def authorized_student
+    unless logged_in? && session[:logged_in_student_id]
+      flash[:notice] = "You must be logged in as a student to see this page"
       redirect_to login_path
     end
   end
+
+  def authorized_teacher
+    unless logged_in? && session[:logged_in_teacher_id]
+      flash[:notice] = "You must be logged in as a teacher to see this page"
+      redirect_to login_path
+    end
+  end
+
 end
