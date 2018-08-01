@@ -17,7 +17,6 @@ class LessonsController < ApplicationController
   end
 
   def create
-    byebug
     @lesson = Lesson.new(lesson_params)
     if @lesson.save
       redirect_to lesson_path(@lesson)

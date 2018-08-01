@@ -1,3 +1,24 @@
 <h1><%= @lesson.instrument.name%></h1>
 <%= @lesson.difficulty %><br>
 <%= @lesson.genre %>
+
+<br>
+<ul>
+  <% @lesson.sample_bookings.each do |b| %>
+    <li>b</li>
+  <% end %>
+</ul>
+<h2>AVAILABLE BOOKINGS</h2>
+
+<ol>
+  <li>AVAILABLE TIME SLOT 1</li>
+  <li>AVAILABLE TIME SLOT 2</li>
+  <li>AVAILABLE TIME SLOT 3</li>
+  <li>AVAILABLE TIME SLOT 4</li>
+  <li>AVAILABLE TIME SLOT 5</li>
+</ol>
+CALENDAR
+HAS ALL AVAILABLE BOOKINGS (INCLUDE THE LESSON ID)
+
+<br>
+<%= link_to 'Book This Lesson', new_booking_path %>

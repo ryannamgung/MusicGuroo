@@ -1,0 +1,11 @@
+<h1>Edit Your Profile</h1>
+<%= form_for @review do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name%>
+  <%= f.submit %>
+<% end %>
+<br>
+
+<footer>
+  <%= link_to 'My homepage', @review %>
+</footer>

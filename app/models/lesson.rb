@@ -8,4 +8,9 @@ class Lesson < ApplicationRecord
   def genres
     ['Classical', 'Rock', 'Pop', 'Country', 'Rap', 'R&B', 'Jazz', 'Funk', 'Fusion', 'Bluegrass', 'World Music', 'Soul', 'Ethnic', 'Indie', 'Folk/Acoustic', 'Raggae']
   end
+
+  def sample_bookings
+    self.bookings.build
+  end
+
 end
