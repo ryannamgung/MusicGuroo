@@ -1,27 +1,27 @@
-<h1><%= current_user.name %></h1>
+<div>
+  <h1><%= current_user.name %></h1>
+</div>
 
-<h2>My Bookings:</h2>
-
-<ul>
-  <% current_user.bookings.each do |b| %>
-  <li>
-  <h3>Booking: </h3>
-  <%= link_to b.lesson.instrument.name, b %>
-  <h3>Teacher: </h3>
-  <%= link_to b.teacher.name, b.teacher %>
-  <h3>Time: </h3>
-  <%= b.time %>
-  <h3>Cost:</h3>
-  $<%= b.lesson.cost %>
-  </li>
-  <%= button_to 'Delete Booking', b, method: :delete %>
-  <% end %>
-</ul>
-
+<div>
+  <h3>My Bookings:</h3>
+  <ul>
+    <% current_user.bookings.each do |b| %>
+      <li>
+        <h4><%= link_to b.lesson.instrument.name, b %> lesson with <%= link_to b.teacher.name, b.teacher %></h4>
+        <%= b.time.strftime("%A, %d %b %Y %l:%M %p") %>
+        <br>
+        $<%= b.lesson.cost %>
+        <%= button_to 'Delete Booking', b, method: :delete %>
+      </li>
+    <% end %>
+  </ul>
+</div>
 
 <footer>
-  <%= link_to 'Edit Profile', edit_student_path(current_user) %>
-  <%= link_to 'Delete My Profile',  { action: :destroy, id: current_user.id }, method: :delete, data: { confirm: 'Are you sure?' } %>
-  <%= link_to 'All Teachers', teachers_path %>
-  <%= link_to 'All Lessons', lessons_path %>
+  <ul>
+    <li><%= link_to 'Edit Profile', edit_student_path(current_user) %></li>
+    <li><%= link_to 'Delete My Profile',  { action: :destroy, id: current_user.id }, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+    <li><%= link_to 'All Teachers', teachers_path %></li>
+    <li><%= link_to 'All Lessons', lessons_path %></li>
+  </ul>
 </footer>

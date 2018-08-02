@@ -1,14 +1,21 @@
-<h1>Sign up as a Student at MusicGuroo</h1>
-<%# TODO: STYLE BETTER %>
-<%= form_for @student do |f| %>
-  <%= f.label :username %>
-  <%= f.text_field :username%>
-  <br>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <br>
-  <hr>
-  <%= f.label :name %>
-  <%= f.text_field :name%>
-  <%= f.submit 'Join Now!' %>
+<div class="">
+  <h3>Sign up as a Student</h3>
+</div>
+
+<div class="">
+  <%= form_for @student do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name%>
+  </div>
+  <div>
+    <%= f.label :username %>
+    <%= f.text_field :username%>
+  </div>
+  <div>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+    <%= f.submit 'Join Now!' %>
+</div>
 <% end %>

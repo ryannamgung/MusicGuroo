@@ -1,7 +1,21 @@
 <h1>MusicGuroo</h1>
 
-<ul>
+<!-- <ul>
 <% Instrument.all.each do |i| %>
   <div><a href="/instruments/<%= i.id %>/lessons"> <img src="<%= i.image_url %>", width="100", height="100"> <%= i.name %> </a></div>
 <% end %>
-</ul>
+</ul> -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-md-3">
+      <div class="thumbnail">
+        <% Instrument.all.each do |i| %>
+        <h4><%= i.name %></h4>
+        <img src="<%= i.image_url %>", width="100", height="100">
+        <a href="/instruments/<%= i.id %>/lessons" class="btn btn-primary col-xs-12" role="button">View More</a>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
