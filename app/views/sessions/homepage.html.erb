@@ -3,6 +3,6 @@
 
 <ul>
 <% Instrument.all.each do |i| %>
-  <div><a href="<%= instrument_path(i) %>"> <img src="<%= i.image_url %>", width="100", height="100"> <%= i.name %> </a></div>
+  <div><a href="/instruments/<%= i.id %>/lessons"> <img src="<%= i.image_url %>", width="100", height="100"> <%= i.name %> </a></div>
 <% end %>
 </ul
