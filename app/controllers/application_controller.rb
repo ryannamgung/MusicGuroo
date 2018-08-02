@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   before_action :authorized_student
 
   # before_action :authorized
-  helper_method :logged_in?, :current_user
+  helper_method :logged_in?, :current_user, :authorized_teacher, :authorized_student
 
   def current_user
     # find_by will return nil which is falsey if the user is not found
