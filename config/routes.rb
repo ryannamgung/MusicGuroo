@@ -10,8 +10,6 @@ Rails.application.routes.draw do
   resources :lessons
   resources :sessions, only: %i[create destroy]
 
-  get '/teachers/:teacher_id/lessons', to: 'lessons#index_teacher_lessons', as: :teacher_lessons
-
   get '/instruments/:instrument_id/lessons', to: 'lessons#index_instrument_lessons', as: :instrument_lessons
 
   get '/login', to: 'sessions#new', as: :login

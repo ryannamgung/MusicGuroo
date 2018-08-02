@@ -14,10 +14,6 @@ class LessonsController < ApplicationController
     @lessons = Lesson.all
   end
 
-  def index_teacher_lessons
-    @lessons = @teacher.lessons
-  end
-
   def show
     @booking = Booking.new
   end
