@@ -2,15 +2,19 @@ class LessonsController < ApplicationController
   before_action :set_teacher, only: [:index_teacher_lessons]
   before_action :set_lesson, only: [:show, :edit, :update]
 
-  skip_before_action :authorized_teacher, only: [:index, :index_teacher_lessons, :show]
-  skip_before_action :authorized_student, only: [:index, :index_teacher_lessons, :show, :new, :create, :edit, :update, :destroy]
+  skip_before_action :authorized_teacher, only: [:index, :index_teacher_lessons, :show, :index_instrument_lessons]
+  skip_before_action :authorized_student, only: [:index, :index_teacher_lessons, :show, :new, :create, :edit, :update, :destroy, :index_instrument_lessons]
 
+  def index_instrument_lessons
+    @instrument = Instrument.find_by(id: params[:instrument_id])
+    @lessons = @instrument.lessons
+  end
 
   def index #all lessons for that particular teacher
     @lessons = Lesson.all
   end
 
-  def index_teacher_lessons #add more stuff to the view
+  def index_teacher_lessons
     @lessons = @teacher.lessons
   end
 
@@ -40,6 +44,11 @@ class LessonsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @lesson.destroy
+    redirect_to lessons_path
   end
 
   private

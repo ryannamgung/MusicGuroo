@@ -2,6 +2,9 @@ class SessionsController < ApplicationController
   skip_before_action :authorized_student
   skip_before_action :authorized_teacher
 
+  def homepage
+  end
+
   def new
   end
 

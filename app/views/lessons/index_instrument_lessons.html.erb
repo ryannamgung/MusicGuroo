@@ -1,0 +1,5 @@
+<ul>
+<% @lessons.each do |l| %>
+  <li><%= link_to "Learn #{l.instrument.name} with #{l.teacher.name.titleize}", l %> | Genre: <%= l.genre %></li>
+<% end %>
+</ul>

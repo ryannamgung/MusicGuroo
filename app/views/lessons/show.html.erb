@@ -9,6 +9,13 @@
   <%= link_to "back to my profile", teacher_path(current_user.id) %>
 <% end %>
 
+<h2>Reviews</h2>
+<% @lesson.reviews.each do |r| %>
+  Rating: <%= r.rating %> |
+  Description: <%= r.description %><br>
+<% end %>
+
+
 <% if session[:logged_in_student_id] %>
 <h3>Book this lesson</h3>
 

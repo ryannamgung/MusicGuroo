@@ -7,11 +7,11 @@
 
   <%= form_tag sessions_path do %>
     <%= label_tag "Username" %>
-    <%= text_field_tag :username %><br><br>
+    <%= text_field_tag :username %>
     <%= label_tag "Password" %>
-    <%= password_field_tag :password %><br><br>
+    <%= password_field_tag :password %><br>
     <%= radio_button_tag 'user_type', 'Student', checked = true %>
-    <%= label_tag "Student" %><br><br>
+    <%= label_tag "Student" %><br>
     <%= radio_button_tag 'user_type', 'Teacher' %>
     <%= label_tag "Teacher" %><br><br>
     <%= submit_tag "Sign In" %>

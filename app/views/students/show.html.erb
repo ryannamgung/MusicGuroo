@@ -5,7 +5,7 @@
 <ul>
   <% current_user.bookings.each do |b| %>
   <li>
-  <h3>Lesson: </h3>
+  <h3>Booking: </h3>
   <%= link_to b.lesson.instrument.name, b %>
   <h3>Teacher: </h3>
   <%= link_to b.teacher.name, b.teacher %>

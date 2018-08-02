@@ -7,6 +7,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   </head>
 
   <body>
@@ -15,12 +16,17 @@
       <%= button_to "Logout", logout_path, method: :delete %>
       <hr>
     <% else %>
-      <%= link_to "Sign up to become a Student!", new_student_path %>
-      <%= link_to "Sign up to become a Guroo!", new_teacher_path %>
+      <%= link_to "Sign up to become a Student!", new_student_path %> |
+      <%= link_to "Sign up to become a Guroo!", new_teacher_path %> |
       <%= link_to "Login", login_path %>
       <hr>
     <% end %>
 
     <%= yield %>
+
+    <% if logged_in? %>
+      <hr>
+      <footer><p><%= link_to "My Profile", current_user %><p></footer>
+    <% end %>
   </body>
 </html>

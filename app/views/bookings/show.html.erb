@@ -1,12 +1,15 @@
 <h1>Your booking</h1>
 
-<%= @booking.student.name %><br>
-<%= @booking.teacher.name %><br>
-<%= @booking.lesson.instrument.name %><br>
-<%= @booking.time.strftime("%A, %d %b %Y %l:%M %p") %>
+Student Name: <%= @booking.student.name %><br>
+Teacher Name: <%= @booking.teacher.name %><br>
+Instrument: <%= @booking.lesson.instrument.name %><br>
+Lesson Start Time: <%= @booking.time.strftime("%A, %d %b %Y %l:%M %p") %>
 
+<br>
+<br>
+<br>
 
-<h3>Write A Review: </h3>
+<h3>Write A Review For <%= @booking.teacher.name.titleize %>'s <%= @booking.instrument.name.titleize %> Lesson: </h3>
 
 <%= form_for @review do |f| %>
   <%= f.label :rating %>

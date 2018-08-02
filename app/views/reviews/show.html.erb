@@ -5,11 +5,3 @@
 <%= @review.teacher.name %>
 <div>Rating: <%= @review.rating %></div>
 <div>Review: <%= @review.description %></div>
-
-<% if session[:logged_in_student_id] %>
-  <%= link_to 'Back to my profile', student_path(current_user) %>
-<% end %>
-
-<% if session[:logged_in_teacher_id] %>
-  <%= link_to 'Back to my profile', teacher_path(current_user) %>
-<% end %>

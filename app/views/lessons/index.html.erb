@@ -2,6 +2,6 @@
 
 <ul>
   <% @lessons.each do |l| %>
-  <li><%= link_to l.instrument.name, lesson_path(l) %></li>
+  <li>Learn <%= link_to l.instrument.name, lesson_path(l) %> with <%= l.teacher.name.titleize %></li>
   <% end %>
 </ul>
