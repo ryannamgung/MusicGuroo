@@ -19,16 +19,16 @@ Student.create([{name: "Josephine"},
                 {name: "Santos"},
                 {name: "Micah"}] )
 
-Instrument.create([{name: "Guitar"},
-                  {name: "Piano"},
-                  {name: "Violin"},
-                  {name: "Cello"},
-                  {name: "Sax"},
-                  {name: "Flute"},
-                  {name: "Drums"},
-                  {name: "Viola Da Gamba"},
-                  {name: "Qanun"},
-                  {name: "Santour"}])
+Instrument.create([{name: "Guitar", image_url: "https://www.martinguitar.com/media/8543/d-21_f_1195x3000.jpg"},
+                  {name: "Piano", image_url: "https://a.1stdibscdn.com/archivesE/upload/1722654/f_63303131483737802632/piano_org_z.jpg"},
+                  {name: "Violin", image_url: "https://media.guitarcenter.com/is/image/MMGS7/My-Violin-Starter-Pack-1-4-Size/H73551000001000-00-500x500.jpg"},
+                  {name: "Cello", image_url: "http://kindersay.com/files/images/cello.png"},
+                  {name: "Saxophone", image_url: "https://media.wwbw.com/is/image/MMGS7/BTS-300-Tenor-Saxophone-Outfit-Lacquer/463682000420000-00-500x500.jpg"},
+                  {name: "Flute", image_url: "https://www.woodbrass.com/images/SQUARE400/woodbrass/PFA+206.JPG"},
+                  {name: "Drums", image_url: "http://www.tama.com/STAR/images/gallery/L/TB_SKB.jpg"},
+                  {name: "Viola Da Gamba", image_url: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/503219/1384277/main-image"},
+                  {name: "Qanun", image_url: "http://i.ebayimg.com/00/s/NTAwWDUwMA==/z/lwIAAOxycmBS-ryB/$_3.JPG?set_id=2"},
+                  {name: "Santour", image_url: "https://images-na.ssl-images-amazon.com/images/I/91DScN9%2BRtL._SL1500_.jpg"}])
 
 Lesson.create([
   {teacher: Teacher.first, difficulty: "beginner", instrument: Instrument.first, genre: "classic"},
