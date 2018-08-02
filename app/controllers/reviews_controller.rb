@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
   # before_action :student?, only: [:new, :create :edit, :update, :destroy]
   before_action :set_review, only: [:edit, :show, :update, :destroy]
   skip_before_action :authorized_teacher
-  skip_before_action :authorized_student, only [:show]
+  skip_before_action :authorized_student, only: [:show]
 
   def new
     @review = Review.new
