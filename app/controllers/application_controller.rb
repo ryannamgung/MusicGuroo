@@ -36,14 +36,18 @@ class ApplicationController < ActionController::Base
   end
 
   def authorized_student
-    unless logged_in? && session[:logged_in_student_id]
+    if logged_in? && session[:logged_in_student_id]
+      return true
+    else
       flash[:notice] = "You must be logged in as a student to see this page"
       redirect_to login_path
     end
   end
 
   def authorized_teacher
-    unless logged_in? && session[:logged_in_teacher_id]
+    if logged_in? && session[:logged_in_teacher_id]
+      return true
+    else
       flash[:notice] = "You must be logged in as a teacher to see this page"
       redirect_to login_path
     end
