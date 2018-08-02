@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
-  skip_before_action :authorized_student, only: [:new, :create]
-  skip_before_action :authorized_teacher, only: [:new, :create]
+  skip_before_action :authorized_student
+  skip_before_action :authorized_teacher
 
   def new
   end

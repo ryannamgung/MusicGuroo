@@ -1,6 +1,7 @@
 class StudentsController < ApplicationController
-  skip_before_action :authorized_student, only: [:new, :create]
-  skip_before_action :authorized_teacher, only: [:new, :create]
+  skip_before_action :authorized_teacher
+  skip_before_action :authorized_student, only: [:show, :new, :create]
+  before_action :logged_out?, only: [:new, :create]
 
   # before_action :set_student, only: [:edit, :show, :update, :destroy]
   #before_action :require_Student_login
@@ -20,6 +21,9 @@ class StudentsController < ApplicationController
   end
 
   def show
+    if check_id? && authorized_student
+      render :show
+    end
   end
 
   def edit

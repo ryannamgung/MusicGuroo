@@ -1,9 +1,8 @@
 class TeachersController < ApplicationController
-  skip_before_action :authorized_teacher, only: [:new, :create]
-  skip_before_action :authorized_student, only: [:new, :create, :show, :edit]
+  skip_before_action :authorized_teacher, only: [:index, :show, :new, :create]
+  skip_before_action :authorized_student
+  before_action :logged_out?, only: [:new, :create]
 
-  # before_action :set_teacher, only: [:edit, :show, :update, :destroy]
-  #before_action :require_teacher_login
   def index
     @teachers = Teacher.all
   end

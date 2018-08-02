@@ -1,6 +1,11 @@
 class LessonsController < ApplicationController
   before_action :set_teacher, only: [:index_teacher_lessons]
   before_action :set_lesson, only: [:show, :edit, :update]
+
+  skip_before_action :authorized_teacher, only: [:index, :index_teacher_lessons, :show]
+  skip_before_action :authorized_student, only: [:index, :index_teacher_lessons, :show, :new, :create, :edit, :update, :destroy]
+
+
   def index #all lessons for that particular teacher
     @lessons = Lesson.all
   end

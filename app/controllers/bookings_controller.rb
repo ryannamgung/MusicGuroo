@@ -2,6 +2,9 @@ class BookingsController < ApplicationController
 
   before_action :set_booking, only: [:edit, :show, :update, :destroy]
 
+  skip_before_action :authorized_teacher
+  skip_before_action :authorized_student, only: [:show]
+
   def new
     @booking = Booking.new
   end
@@ -16,7 +19,10 @@ class BookingsController < ApplicationController
   end
 
   def show
-    @review = Review.new
+    if logged_in?
+      @review = Review.new
+      render :show
+    end
   end
 
   def edit

@@ -16,8 +16,23 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def check_id?
+    current_user.id == params[:id]
+  end
+
   def logged_in?
     !!current_user #coerce the current_user into a boolean
+  end
+
+  def logged_out?
+    unless !logged_in?
+      flash[:notice] = "You must log out first."
+      if authorized_student
+        redirect_to student_path(current_user)
+      else
+        redirect_to teacher_path(current_user)
+      end
+    end
   end
 
   def authorized_student
