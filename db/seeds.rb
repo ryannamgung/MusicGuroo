@@ -7,17 +7,17 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-Teacher.create([{name: "Jon", bio: "Born.", philosophy: "I believe in nothing but eating."},
-                {name: "Ryan", bio: "Born and raised.", philosophy: "I think of the world as as flat."},
-                {name: "Daniel", bio: "never lived up to his potential.", philosophy: "I never let my student work."},
-                {name: "Jimmy", bio: "Overachiever in the field of hot-dog hugging.", philosophy: "A spank here, a spank there never is the best didactic attitude."},
-                {name: "Sammy", bio: "Ice cream aficionado.", philosophy: "I teach only ancient music and nothing else."}])
+Teacher.create([{username: 't1', password: '12345', name: "Jon", bio: "Born.", philosophy: "I believe in nothing but eating."},
+                {username: 't2', password: '12345', name: "Ryan", bio: "Born and raised.", philosophy: "I think of the world as as flat."},
+                {username: 't3', password: '12345', name: "Daniel", bio: "never lived up to his potential.", philosophy: "I never let my student work."},
+                {username: 't4', password: '12345', name: "Jimmy", bio: "Overachiever in the field of hot-dog hugging.", philosophy: "A spank here, a spank there never is the best didactic attitude."},
+                {username: 't5', password: '12345', name: "Sammy", bio: "Ice cream aficionado.", philosophy: "I teach only ancient music and nothing else."}])
 
-Student.create([{name: "Josephine"},
-                {name: "Geraldine"},
-                {name: "Brandon"},
-                {name: "Santos"},
-                {name: "Micah"}] )
+Student.create([{name: "Josephine", username: 's1', password: '12345'},
+                {name: "Geraldine", username: 's2', password: '12345'},
+                {name: "Brandon", username: 's3', password: '12345'},
+                {name: "Santos", username: 's4', password: '12345'},
+                {name: "Micah", username: 's5', password: '12345'}] )
 
 Instrument.create([{name: "Guitar", image_url: "https://www.martinguitar.com/media/8543/d-21_f_1195x3000.jpg"},
                   {name: "Piano", image_url: "https://a.1stdibscdn.com/archivesE/upload/1722654/f_63303131483737802632/piano_org_z.jpg"},
