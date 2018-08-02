@@ -18,19 +18,26 @@
   </head>
 
   <body>
-    <%= stylesheet_link_tag "application" %>
-    <div class="container-fluid">
-      <% if logged_in? %>
-        <h1>WELCOME TO MUSIC GUROO!</h1>
-        <%= button_to "Logout", logout_path, method: :delete %>
-        <hr>
-      <% else %>
-        <%= link_to "Sign up to become a Student!", new_student_path %> |
-        <%= link_to "Sign up to become a Guroo!", new_teacher_path %>
-        <%= link_to "Login", login_path %>
-        <hr>
-      <% end %>
-    </div>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">MusicGuroo</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li>
+            <% if logged_in? %>
+              <%= button_to "Logout", logout_path, method: :delete %>
+            <% else %>
+              <li><a href="/students/new"><span class="glyphicon glyphicon-user"></span> Sign up to become a Student</a></li>
+
+              <li><a href="/teachers/new"><span class="glyphicon glyphicon-user"></span> Sign up to become a Guroo </a></li>
+
+              <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login </a></li>
+            <% end %>
+          </a></li>
+        </ul>
+      </div>
+    </nav>
 
     <%= yield %>
 
