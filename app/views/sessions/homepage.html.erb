@@ -1,5 +1,16 @@
 <center><%= image_tag("MusicGuroo.png",size: "440x130")%></center>
 
+<div class="description">
+  <p>
+  Looking for a music guru?
+  <br><br>
+  <strong>MusicGuroo</strong> connects top-level musicians with those who seek to learn from them.
+  <br><br>
+  In the teacher’s profile page, Learn about the teacher’s concerts, albums, and other musical activities, as well the lessons they offer.
+  <br><br>
+  Book a lesson through the online booking system.</p>
+</div>
+
 <div class="nested">
   <% Instrument.all.each do |i| %>
   <a href="/instruments/<%= i.id %>/lessons">
