@@ -1,18 +1,20 @@
 <div>
   <h1><%= current_user.name %></h1>
 </div>
-
+<br>
 <div>
   <h3>My Bookings:</h3>
+  <br>
   <ul>
     <% current_user.bookings.each do |b| %>
       <li>
-        <h4><%= link_to b.lesson.instrument.name, b %> lesson with <%= link_to b.teacher.name, b.teacher %></h4>
+        <h4><%= link_to "#{b.lesson.instrument.name} | #{b.lesson.genre} | #{b.lesson.difficulty}", b %> lesson with <%= link_to b.teacher.name, b.teacher %></h4>
         <%= b.time.strftime("%A, %d %b %Y %l:%M %p") %>
         <br>
         $<%= b.lesson.cost %>
         <%= button_to 'Delete Booking', b, method: :delete %>
       </li>
+      <br>
     <% end %>
   </ul>
 </div>
