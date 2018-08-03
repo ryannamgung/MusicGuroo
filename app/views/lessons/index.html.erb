@@ -1,7 +1,7 @@
-<h1>HELLO FROM ALL LESSONS</h1>
+<h1>Availble lessons:</h1>
 
 <ul>
   <% @lessons.each do |l| %>
-  <li>Learn <%= link_to l.instrument.name, lesson_path(l) %> with <%= l.teacher.name.titleize %></li>
+  <li><h4><%= link_to "#{l.instrument.name} | #{l.genre} | #{l.difficulty}", lesson_path(l) %> - <%= l.teacher.name.titleize %></h4>  </li>
   <% end %>
 </ul>

@@ -26,18 +26,19 @@
         </div>
         <ul class="nav navbar-nav">
           <li>
+            <li><%= link_to 'All Teachers', teachers_path %></li>
+            <li><%= link_to 'All Lessons', lessons_path %></li>
             <li><% if logged_in? %>
               <%= button_to "Logout", logout_path, method: :delete %></li>
                 <li><%= link_to "My Profile", current_user %></li>
-                <li><%= link_to 'All Teachers', teachers_path %></li>
-                <li><%= link_to 'All Lessons', lessons_path %></li>
             <% else %>
-              <li><a href="/students/new"><span class="glyphicon glyphicon-user"></span> Sign up to become a Student</a></li>
+              <li><a href="/students/new"><span class="glyphicon glyphicon-user"></span> Sign up as Student</a></li>
 
-              <li><a href="/teachers/new"><span class="glyphicon glyphicon-user"></span> Sign up to become a Guroo </a></li>
+              <li><a href="/teachers/new"><span class="glyphicon glyphicon-user"></span> Sign up as Teacher </a></li>
 
               <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login </a></li>
             <% end %>
+
           </a></li>
         </ul>
       </div>

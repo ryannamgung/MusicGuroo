@@ -39,10 +39,23 @@ Instrument.create([{name: "Guitar", image_url: "https://www.martinguitar.com/med
                   {name: "Santour", image_url: "https://images-na.ssl-images-amazon.com/images/I/91DScN9%2BRtL._SL1500_.jpg"}])
 
 Lesson.create([
-  {teacher: Teacher.first, difficulty: "beginner", instrument: Instrument.first, genre: "classic"},
-  {teacher: Teacher.second, difficulty: "intermediate", instrument: Instrument.all.sample, genre: "pop"},
-  {teacher: Teacher.third, difficulty: "beginner", instrument: Instrument.all.sample, genre: "jazz"},
-  {teacher: Teacher.last, difficulty: "intermediate", instrument: Instrument.all.sample, genre: "classic"},
-  {teacher: Teacher.second, difficulty: "master", instrument: Instrument.all.sample, genre: "bluegrass"},
-  {teacher: Teacher.last, difficulty: "advanced", instrument: Instrument.all.sample, genre: "classic"},
+  {teacher: Teacher.first, difficulty: "beginner", instrument: Instrument.find(6), genre: "classical", cost: 65},
+  {teacher: Teacher.first, difficulty: "intermediate", instrument: Instrument.find(6), genre: "classical", cost: 75},
+  {teacher: Teacher.first, difficulty: "advanced", instrument: Instrument.find(6), genre: "classical", cost: 85},
+  {teacher: Teacher.first, difficulty: "beginner", instrument: Instrument.find(6), genre: "Jazz", cost: 65},
+  {teacher: Teacher.first, difficulty: "intermediate", instrument: Instrument.find(6), genre: "Jazz", cost: 75},
+  {teacher: Teacher.first, difficulty: "advanced", instrument: Instrument.find(6), genre: "Jazz", cost: 85},
+  {teacher: Teacher.second, difficulty: "beginner", instrument: Instrument.find(2), genre: "classical", cost: 90},
+  {teacher: Teacher.second, difficulty: "intermediate", instrument: Instrument.find(2), genre: "pop", cost: 100},
+  {teacher: Teacher.second, difficulty: "intermediate", instrument: Instrument.find(1), genre: "rock", cost: 100},
+  {teacher: Teacher.third, difficulty: "intermediate", instrument: Instrument.find(3), genre: "classical", cost: 80},
+  {teacher: Teacher.third, difficulty: "advanced", instrument: Instrument.find(4), genre: "classical", cost: 80},
+  {teacher: Teacher.first, difficulty: "beginner", instrument: Instrument.find(5), genre: "classical", cost: 80},
+  {teacher: Teacher.second, difficulty: "intermediate", instrument: Instrument.find(10), genre: "Bluegrass", cost: 80},
+  {teacher: Teacher.third, difficulty: "advanced", instrument: Instrument.find(7), genre: "Raggae", cost: 80},
+  {teacher: Teacher.first, difficulty: "beginner", instrument: Instrument.find(8), genre: "Ethnic", cost: 80},
+  {teacher: Teacher.second, difficulty: "advanced", instrument: Instrument.find(9), genre: "World Music", cost: 80},
+  {teacher: Teacher.third, difficulty: "intermediate", instrument: Instrument.all.sample, genre: "Rock", cost: 80},
+  {teacher: Teacher.first, difficulty: "beginner", instrument: Instrument.all.sample, genre: "classical", cost: 80},
+  {teacher: Teacher.second, difficulty: "advanced", instrument: Instrument.all.sample, genre: "classical", cost: 80}
   ])
