@@ -24,15 +24,19 @@
         <div class="navbar-header">
           <a class="navbar-brand" href="/">MusicGuroo</a>
         </div>
-        <ul class="nav navbar-nav">
+        <ul class="nav navbar-nav navbar-left">
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
           <li>
             <li><%= link_to 'All Teachers', teachers_path %></li>
             <li><%= link_to 'All Lessons', lessons_path %></li>
-            <li><% if logged_in? %>
-              <%= link_to logout_path, method: :delete do %>
+            <% if logged_in? %>
+              <li><%= link_to "My Profile", current_user %></li>
+              <li><%= link_to logout_path, method: :delete do %>
                <span class="glyphicon glyphicon-log-out"></span> Logout
              <% end %></li>
-                <li><%= link_to "My Profile", current_user %></li>
             <% else %>
               <li><a href="/students/new"><span class="glyphicon glyphicon-user"></span> Sign up as Student</a></li>
 
@@ -40,8 +44,6 @@
 
               <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login </a></li>
             <% end %>
-
-          </a></li>
         </ul>
       </div>
     </nav>

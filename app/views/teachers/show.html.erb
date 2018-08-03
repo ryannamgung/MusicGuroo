@@ -30,12 +30,9 @@
 
 
 <footer>
-  <% if session[:logged_in_teacher_id] %>
-    <%= link_to 'Edit Profile', edit_teacher_path(current_user) %>
-    <%= link_to 'Add lesson', new_lesson_path(current_user) %>
+  <% if session[:logged_in_teacher_id].to_s == params[:id]%>
+    <%= link_to 'Edit Profile', edit_teacher_path(current_user) %> |
+    <%= link_to 'Add lesson', new_lesson_path(current_user) %> |
     <%= link_to 'Delete My Profile',  { action: :destroy, id: current_user.id }, method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>
-
-  <%= link_to 'All Teachers', teachers_path %>
-  <%= link_to 'All Lessons', lessons_path %>
 </footer>

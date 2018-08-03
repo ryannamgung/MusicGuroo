@@ -1,14 +1,10 @@
+<div>
+<h2>Lesson details:</h2>
+<h3><%= link_to "#{@booking.instrument.name} | #{@booking.lesson.genre} | #{@booking.lesson.difficulty}", @booking.lesson %> with <%= link_to @booking.teacher.name, @booking.teacher %></h3>
+<h5><%= @booking.time.strftime("%A, %d %b %Y %l:%M %p") %></h5>
+</div>
 
-<h3>Lesson details:</h3>
-<br><br>
-<h5><%= link_to "#{@booking.instrument.name} | #{@booking.lesson.genre} | #{@booking.lesson.difficulty}", @booking.lesson %> with <%= link_to @booking.teacher.name, @booking.teacher %></h5>
-
-<%= @booking.time.strftime("%A, %d %b %Y %l:%M %p") %>
-
-<br>
-<br>
-<br>
-
+<div>
 <h3>Write A Review For <%= @booking.teacher.name.titleize %>'s <%= @booking.instrument.name.titleize %> Lesson: </h3>
 
 <%= form_for @review do |f| %>
@@ -20,5 +16,4 @@
   <%= f.submit %>
 <% end %>
 
-
-<%= link_to 'My profile', student_path(current_user) %>
+</div>
