@@ -1,22 +1,12 @@
-<!-- <center><img src="./assets/images/MusicGuroo.png"></center> -->
 <center><%= image_tag("MusicGuroo.png",size: "440x130")%></center>
 
-<!-- <ul>
-<% Instrument.all.each do |i| %>
-  <div><a href="/instruments/<%= i.id %>/lessons"> <img src="<%= i.image_url %>", width="100", height="100"> <%= i.name %> </a></div>
-<% end %>
-</ul> -->
-
-<div class="container">
-  <div class="row">
-    <div class="col-sm-6 col-md-4">
-      <div class="thumbnail">
-        <% Instrument.all.each do |i| %>
-        <h4><center><%= i.name %></center></h4>
-        <img src="<%= i.image_url %>", width="100", height="100">
-        <a href="/instruments/<%= i.id %>/lessons" class="btn btn-primary col-xs-12" role="button">View More</a><br>
-        <% end %>
-      </div>
+<div class="nested">
+  <% Instrument.all.each do |i| %>
+  <a href="/instruments/<%= i.id %>/lessons">
+    <div class="instrument">
+        <img src="<%= i.image_url %>", height="100">
+        <h4 class="caption"><%= i.name %></h4>
     </div>
-  </div>
+  </a>
+  <% end %>
 </div>

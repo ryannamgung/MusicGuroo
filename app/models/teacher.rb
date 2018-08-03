@@ -3,7 +3,7 @@ require 'date'
 class Teacher < ApplicationRecord
 
   validates :name, :bio, :philosophy, presence: true
-  validates :bio, length: { maximum: 500 }
+  validates :bio, length: { maximum: 1000 }
   validates :username, presence: true, uniqueness: true
 
   has_secure_password
