@@ -66,3 +66,17 @@ Lesson.create([
   {teacher: Teacher.fourth, difficulty: "beginner", instrument: Instrument.all.sample, genre: "R&B", cost: 50},
   {teacher: Teacher.fourth, difficulty: "intermediate", instrument: Instrument.all.sample, genre: "Disney", cost: 90}
   ])
+
+Booking.create(lesson: Lesson.first, student: Student.first, time: Lesson.first.teacher.available_slots.sample)
+Booking.create(lesson: Lesson.second, student: Student.second, time: Lesson.second.teacher.available_slots.sample)
+Booking.create(lesson: Lesson.third, student: Student.third, time: Lesson.third.teacher.available_slots.sample)
+Booking.create(lesson: Lesson.fourth, student: Student.fourth, time: Lesson.fourth.teacher.available_slots.sample)
+Booking.create(lesson: Lesson.fifth, student: Student.fifth, time: Lesson.fifth.teacher.available_slots.sample)
+Booking.create(lesson: Lesson.last, student: Student.fifth, time: Lesson.last.teacher.available_slots.sample)
+
+Review.create(booking: Booking.first, rating: 5, description: "Great Teacher!!")
+Review.create(booking: Booking.second, rating: 4, description: "Amazing.")
+Review.create(booking: Booking.third, rating: 3, description: "Pretty good job but a little pricy.")
+Review.create(booking: Booking.fourth, rating: 5, description: "My favorite artist taught me music!!")
+Review.create(booking: Booking.fifth, rating: 4, description: "Highly recommended.")
+Review.create(booking: Booking.last, rating: 5, description: "The BEST!!!!!!")
