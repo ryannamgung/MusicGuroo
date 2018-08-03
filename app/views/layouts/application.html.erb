@@ -28,6 +28,9 @@
           <li>
             <li><% if logged_in? %>
               <%= button_to "Logout", logout_path, method: :delete %></li>
+                <li><%= link_to "My Profile", current_user %></li>
+                <li><%= link_to 'All Teachers', teachers_path %></li>
+                <li><%= link_to 'All Lessons', lessons_path %></li>
             <% else %>
               <li><a href="/students/new"><span class="glyphicon glyphicon-user"></span> Sign up to become a Student</a></li>
 
@@ -40,11 +43,12 @@
       </div>
     </nav>
 
-    <%= yield %>
+    <div class="wrapper">
 
-    <% if logged_in? %>
-      <hr>
-      <footer><p><%= link_to "My Profile", current_user %><p></footer>
-    <% end %>
+          <%= yield %>
+
+    </div>
+
+
   </body>
 </html>
