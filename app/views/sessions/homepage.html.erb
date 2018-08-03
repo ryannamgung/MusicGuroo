@@ -1,5 +1,5 @@
 <!-- <center><img src="./assets/images/MusicGuroo.png"></center> -->
-<center><%= image_tag "MusicGuroo.png"%></center>
+<center><%= image_tag("MusicGuroo.png",size: "440x130")%></center>
 
 <!-- <ul>
 <% Instrument.all.each do |i| %>
@@ -9,12 +9,12 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-6 col-md-3">
+    <div class="col-sm-6 col-md-4">
       <div class="thumbnail">
         <% Instrument.all.each do |i| %>
-        <h4><%= i.name %></h4>
+        <h4><center><%= i.name %></center></h4>
         <img src="<%= i.image_url %>", width="100", height="100">
-        <a href="/instruments/<%= i.id %>/lessons" class="btn btn-primary col-xs-12" role="button">View More</a>
+        <a href="/instruments/<%= i.id %>/lessons" class="btn btn-primary col-xs-12" role="button">View More</a><br>
         <% end %>
       </div>
     </div>
