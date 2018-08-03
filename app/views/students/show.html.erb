@@ -1,9 +1,7 @@
+
+
 <div>
-  <h1><%= current_user.name %></h1>
-</div>
-<br>
-<div>
-  <h3>My Bookings:</h3>
+  <h3><%= current_user.name %>'s upcoming lessons:</h3>
   <br>
   <ul>
     <% current_user.bookings.each do |b| %>

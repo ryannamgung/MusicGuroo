@@ -1,9 +1,9 @@
-<h1>Your booking</h1>
 
-Student Name: <%= @booking.student.name %><br>
-Teacher Name: <%= @booking.teacher.name %><br>
-Instrument: <%= @booking.lesson.instrument.name %><br>
-Lesson Start Time: <%= @booking.time.strftime("%A, %d %b %Y %l:%M %p") %>
+<h3>Lesson details:</h3>
+<br><br>
+<h5><%= link_to "#{@booking.instrument.name} | #{@booking.lesson.genre} | #{@booking.lesson.difficulty}", @booking.lesson %> with <%= link_to @booking.teacher.name, @booking.teacher %></h5>
+
+<%= @booking.time.strftime("%A, %d %b %Y %l:%M %p") %>
 
 <br>
 <br>
