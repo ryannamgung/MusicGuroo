@@ -1,19 +1,51 @@
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<body class="sessions">
 
-<%= flash[:notice] %>
+<div class="container">
 
-<% if !logged_in? %>
+  <%= flash[:notice] %>
 
-  <h1>LOGIN</h1>
+<center>
+<div class="middle">
+  <div id="login">
 
-  <%= form_tag sessions_path do %>
-    <%= label_tag "Username" %>
-    <%= text_field_tag :username %>
-    <%= label_tag "Password" %>
-    <%= password_field_tag :password %><br>
-    <%= radio_button_tag 'user_type', 'Student', checked = true %>
-    <%= label_tag "Student" %><br>
-    <%= radio_button_tag 'user_type', 'Teacher' %>
-    <%= label_tag "Teacher" %><br><br>
-    <%= submit_tag "Sign In" %>
-  <% end %>
-<% end %>
+      <% if !logged_in? %>
+
+        <%= form_tag sessions_path do %>
+
+        <fieldset class="clearfix">
+
+          <p><span class="fa fa-user"></span></p><%= text_field_tag :username, nil, placeholder: "Username" %>
+          <p><span class="fa fa-lock"></span></p><%= text_field_tag :password, nil, placeholder: "Password" %>
+
+          <div class="custom-control custom-radio custom-control-inline">
+            <%= radio_button_tag 'user_type', 'Student', checked = true, class: 'custom-control-input' %>
+            <%= label_tag "Student", nil, class: 'custom-control-label', id: 'text'%>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline">
+            <%= radio_button_tag 'user_type', 'Teacher', class: 'custom-control-input' %>
+            <%= label_tag "Teacher", nil, class: 'custom-control-input', id: 'text' %>
+          </div>
+          <div>
+            <span style="width:48%; text-align:left;  display: inline-block;"><a class="small-text" id="text" href="#">Forgot password?</a></span>
+            <%= submit_tag "Sign In", class: 'btn btn-primary' %>
+          </div>
+
+    </fieldset>
+    <div class="clearfix"></div>
+    <% end %>
+    <% end %>
+
+    <div class="clearfix"></div>
+  </div><!-- end login-->
+  <div class="logo">
+    MusicGuroo
+      <div class="clearfix"></div>
+  </div>
+
+</div>
+</center>
+
+</div>
+
+</body>
