@@ -18,7 +18,11 @@ Teacher.create([{username: 't1', password: '12345', name: "Hadar Noiberg",
                 {username: 't3', password: '12345', name: "Alon Bisk",
                   bio: "Alon Bisk is a freelance musician working in and around the New York metropolitan area. Alon was an orchestra member for the first national tour of Spring Awakening, Les Miserables (25th Anniversary Tour), American Idiot (First National Tour), The Last Goodbye (Williamstown Theater Festival) and Natasha, Pierre & The Great Comet of 1812 (Off-Broadway). Alon has also worked on NBC's show Smash (Season 2) as well as promotion for HBO's Game of Thrones (Season 3). Most recently he was a sub for Rocky (Broadway) and can currently be seen in the Atlantic Theater Company's production of Found, a new musical. Alon holds a Bachelor of Music degree and a Master of Music in Orchestral Performance degree from the Manhattan School of Music (under the guidance of NY Philharmonic's associate principal cellist, Alan Stepansky). Alon's main objective is to focus on proper technique and musicality.",
                   philosophy: "I love teaching",
-                  photo_url: "http://www.greenwichhouse.org/music_school/AlonBisk.jpg"}
+                  photo_url: "http://www.greenwichhouse.org/music_school/AlonBisk.jpg"},
+                  {username: 't4', password: '12345', name: "Jermaine Lamarr Cole",
+                    bio: "Jermaine Lamarr Cole, or J.Cole is an American rapper, singer, songwriter and record producer. In October 2011, Cole established The Dreamville Foundation, a 501(c)(3) non-profit organization. Cole has cited several hip-hop artists as influencing his rapping style, including Tupac Shakur, Jay Z, Eminem, Nas, and Andre 3000. Cole began rapping at the age of twelve, and saw it as an ideal profession in 2000.",
+                    philosophy: "I may look like a bum, but I ain't one. Don't @ me if you a fan of Lil Pump",
+                    photo_url: "https://www.billboard.com/files/styles/article_main_image/public/media/j-cole-2016-abg-billboard-1548.jpg"}
                 ])
 
 Student.create([{name: "Josephine", username: 's1', password: '12345'},
@@ -57,5 +61,8 @@ Lesson.create([
   {teacher: Teacher.second, difficulty: "advanced", instrument: Instrument.find(9), genre: "World Music", cost: 80},
   {teacher: Teacher.third, difficulty: "intermediate", instrument: Instrument.all.sample, genre: "Rock", cost: 80},
   {teacher: Teacher.first, difficulty: "beginner", instrument: Instrument.all.sample, genre: "classical", cost: 80},
-  {teacher: Teacher.second, difficulty: "advanced", instrument: Instrument.all.sample, genre: "classical", cost: 80}
+  {teacher: Teacher.second, difficulty: "advanced", instrument: Instrument.all.sample, genre: "classical", cost: 80},
+  {teacher: Teacher.fourth, difficulty: "advanced", instrument: Instrument.all.sample, genre: "rap", cost: 80},
+  {teacher: Teacher.fourth, difficulty: "beginner", instrument: Instrument.all.sample, genre: "R&B", cost: 50},
+  {teacher: Teacher.fourth, difficulty: "intermediate", instrument: Instrument.all.sample, genre: "Disney", cost: 90}
   ])
