@@ -34,7 +34,7 @@
 
 <% avg_rating = avg_rating/@teacher.reviews.count %>
 
-<p>Average Teacher Rating: <%= avg_rating %></p>
+<p>Average Teacher Rating: <%= avg_rating.round(2) %></p>
 <hr>
 <% @teacher.reviews.each do |r| %>
 <h5><%= r.student.name %>'s Review : <h5>
