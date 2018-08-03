@@ -32,7 +32,8 @@
   <% avg_rating += r.rating.to_f %>
 <% end %>
 
-<% avg_rating = avg_rating/@teacher.reviews.count %>
+<% if @teacher.reviews.count > 0 %>
+  <% avg_rating = avg_rating/@teacher.reviews.count %>
 
 <p>Average Teacher Rating: <%= avg_rating %></p>
 <hr>
@@ -44,6 +45,7 @@
 <br>
 <% end %>
 <br>
+<% end %>
 
 
 
