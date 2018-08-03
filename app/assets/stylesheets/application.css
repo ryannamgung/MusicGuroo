@@ -109,3 +109,17 @@ ul {
   border: 3px solid black;
   background-color: LIGHTCYAN;
 }
+
+
+.knockout {
+    background: url(http://apod.nasa.gov/apod/image/0603/coma_misti.jpg) -80px -80px;
+    color: red;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-weight: bold;
+    font-size: 100px;
+    font-family: arial, helvetica;
+    width: 600px;
+    margin: 50px auto;
+    text-align: center;
+}
