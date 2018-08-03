@@ -24,18 +24,38 @@
 
 <h4>Teaching Philosophy</h4>
 <p><%= @teacher.philosophy %></p>
+<br>
+<h4><%= @teacher.name %>'s Reviews</h4>
+
+<% avg_rating = 0 %>
+<% @teacher.reviews.each do |r| %>
+  <% avg_rating += r.rating.to_f %>
+<% end %>
+
+<% if @teacher.reviews.count > 0 %>
+  <% avg_rating = avg_rating/@teacher.reviews.count %>
+
+<p>Average Teacher Rating: <%= avg_rating.round(2) %></p>
+<hr>
+<% @teacher.reviews.each do |r| %>
+<h5><%= r.student.name %>'s Review : <h5>
+<div>Rating: <%= r.rating %><br>
+   Description:
+<%= r.description %></div>
+<br>
+<% end %>
+<br>
+<% end %>
+
 
 
 </div>
 
 
 <footer>
-  <% if session[:logged_in_teacher_id] %>
-    <%= link_to 'Edit Profile', edit_teacher_path(current_user) %>
-    <%= link_to 'Add lesson', new_lesson_path(current_user) %>
+  <% if session[:logged_in_teacher_id].to_s == params[:id]%>
+    <%= link_to 'Edit Profile', edit_teacher_path(current_user) %> |
+    <%= link_to 'Add lesson', new_lesson_path(current_user) %> |
     <%= link_to 'Delete My Profile',  { action: :destroy, id: current_user.id }, method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>
-
-  <%= link_to 'All Teachers', teachers_path %>
-  <%= link_to 'All Lessons', lessons_path %>
 </footer>

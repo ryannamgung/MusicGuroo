@@ -1,6 +1,8 @@
-<h1><%= @lesson.instrument.name%></h1>
-<%= @lesson.difficulty %><br>
-<%= @lesson.genre %>
+<h1 class=""><%= @lesson.instrument.name%></h1>
+<h3>Difficulty:</h2>
+<p><%= @lesson.difficulty.titleize %></p>
+<h3>Genre:</h3>
+<p><%= @lesson.genre.titleize %></p>
 
 <br>
 

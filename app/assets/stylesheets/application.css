@@ -15,12 +15,6 @@
  *= require sessions
  */
 
-body {
-  /* border: 1px solid black; */
- /* background-image: linear-gradient(to bottom right, silver, gray); */
- /* background-attachment: fixed; */
-}
-
 .wrapper{
   /* border: 1px solid black; */
   /* display: grid; */
@@ -142,6 +136,10 @@ ul {
 
 .description {
   padding: 20px;
-  font-size: 18px;
+  font-size: 24px;
   background-color: white
+}
+
+.instrument:hover {
+ border: 5px solid blue
 }
