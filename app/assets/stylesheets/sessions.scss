@@ -4,16 +4,20 @@
 
 
 body.sessions{
-    background: #43484f; /* Old browsers */
-background: -moz-radial-gradient(center, ellipse cover,  #43484f 1%, #222 100%); /* FF3.6+ */
-background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(1%,#43484f), color-stop(100%,#222)); /* Chrome,Safari4+ */
-background: -webkit-radial-gradient(center, ellipse cover,  #43484f 1%,#222 100%); /* Chrome10+,Safari5.1+ */
-background: -o-radial-gradient(center, ellipse cover,  #43484f 1%,#222 100%); /* Opera 12+ */
-background: -ms-radial-gradient(center, ellipse cover,  #43484f 1%,#222 100%); /* IE10+ */
-background: radial-gradient(ellipse at center,  #43484f 1%,#222 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#43484f', endColorstr='#222',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-height:calc(100vh);
-width:100%;
+  background: #43484f; /* Old browsers */
+  background: -moz-radial-gradient(center, ellipse cover,  #43484f 1%, #222 100%); /* FF3.6+ */
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(1%,#43484f), color-stop(100%,#222)); /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(center, ellipse cover,  #43484f 1%,#222 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(center, ellipse cover,  #43484f 1%,#222 100%); /* Opera 12+ */
+  background: -ms-radial-gradient(center, ellipse cover,  #43484f 1%,#222 100%); /* IE10+ */
+  background: radial-gradient(ellipse at center,  #43484f 1%,#222 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#43484f', endColorstr='#222',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  height:calc(100vh);
+  width:100%;
+
+  color: #606468;
+  // font: 87.5%/1.5em 'Open Sans', sans-serif;
+  margin: 0;
 }
 
 
@@ -38,23 +42,23 @@ width:100%;
 
 /* ---------- GENERAL ---------- */
 
-* {
-  box-sizing: border-box;
-    margin:0px auto;
+// * {
+//   box-sizing: border-box;
+//     margin:0px auto;
+//
+//   &:before,
+//   &:after {
+//     box-sizing: border-box;
+//   }
+//
+// }
 
-  &:before,
-  &:after {
-    box-sizing: border-box;
-  }
-
-}
-
-body {
-
-    color: #606468;
-  font: 87.5%/1.5em 'Open Sans', sans-serif;
-  margin: 0;
-}
+// body {
+//
+//     color: #606468;
+//   font: 87.5%/1.5em 'Open Sans', sans-serif;
+//   margin: 0;
+// }
 
 a {
 	color: #eee;
@@ -65,7 +69,7 @@ a:hover {
 	text-decoration: underline;
 }
 
-input {
+input.sessions {
 	border: none;
 	font-family: 'Open Sans', Arial, sans-serif;
 	font-size: 14px;

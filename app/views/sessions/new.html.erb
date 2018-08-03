@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <body class="sessions">
 
-<div class="container">
+<div class="container sessions">
 
   <%= flash[:notice] %>
 
@@ -15,8 +15,8 @@
 
         <fieldset class="clearfix">
 
-          <p><span class="fa fa-user"></span></p><%= text_field_tag :username, nil, placeholder: "Username" %>
-          <p><span class="fa fa-lock"></span></p><%= text_field_tag :password, nil, placeholder: "Password" %>
+          <p><span class="fa fa-user"></span></p><%= text_field_tag :username, nil, class: 'sessions', placeholder: "Username" %>
+          <p><span class="fa fa-lock"></span></p><%= password_field_tag :password, nil, class: 'sessions', placeholder: "Password" %>
 
           <div class="custom-control custom-radio custom-control-inline">
             <%= radio_button_tag 'user_type', 'Student', checked = true, class: 'custom-control-input' %>
