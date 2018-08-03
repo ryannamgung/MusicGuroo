@@ -23,6 +23,6 @@
     <%= f.select :time, @lesson.teacher.available_slots.map { |s| s.strftime("%A, %d %b %Y %l:%M %p") }  %>
     <%= f.hidden_field :lesson_id, :value => @lesson.id %>
     <%= f.hidden_field :student_id, :value => current_user.id %>
-    <%= f.submit %>
+    <%= f.submit 'Book' %>
   <% end %>
 <% end %>

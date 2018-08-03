@@ -3,11 +3,11 @@
 <hr>
 
 <% @teachers.each do |t| %>
-<h4>Name:</h4>
-<%= link_to t.name, t %>
-<h4>Bio:</h4>
-<%= t.bio %>
-<h4>Teaching Philosophy:</h4>
+<h2><%= link_to t.name, t %></h4>
+
+<p><%= t.bio %></p>
+
+<h5>Philosophy:</h5>
 <%= t.philosophy %>
 <hr>
 <% end %>

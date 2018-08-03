@@ -9,6 +9,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/stylesheets/application.css">
 
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -18,32 +19,39 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="/">MusicGuroo</a>
         </div>
         <ul class="nav navbar-nav">
           <li>
+            <li><%= link_to 'All Teachers', teachers_path %></li>
+            <li><%= link_to 'All Lessons', lessons_path %></li>
             <li><% if logged_in? %>
-              <%= button_to "Logout", logout_path, method: :delete %></li>
+              <%= link_to logout_path, method: :delete do %>
+               <span class="glyphicon glyphicon-log-out"></span> Logout
+             <% end %></li>
+                <li><%= link_to "My Profile", current_user %></li>
             <% else %>
-              <li><a href="/students/new"><span class="glyphicon glyphicon-user"></span> Sign up to become a Student</a></li>
+              <li><a href="/students/new"><span class="glyphicon glyphicon-user"></span> Sign up as Student</a></li>
 
-              <li><a href="/teachers/new"><span class="glyphicon glyphicon-user"></span> Sign up to become a Guroo </a></li>
+              <li><a href="/teachers/new"><span class="glyphicon glyphicon-user"></span> Sign up as Teacher </a></li>
 
               <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login </a></li>
             <% end %>
+
           </a></li>
         </ul>
       </div>
     </nav>
 
-    <%= yield %>
+    <div class="wrapper">
 
-    <% if logged_in? %>
-      <hr>
-      <footer><p><%= link_to "My Profile", current_user %><p></footer>
-    <% end %>
+          <%= yield %>
+
+    </div>
+
+
   </body>
 </html>

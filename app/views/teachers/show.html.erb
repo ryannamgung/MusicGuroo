@@ -1,27 +1,32 @@
-<h1><%= @teacher.name %></h1>
+<div class="wrapper">
+  <img src="<%= @teacher.photo_url %>">
 
-<h2>Bio:</h2>
+<h2><%= @teacher.name %></h2>
+
+<br>
+
+<h3>Lessons:</h3>
+
+<div class="nested">
+
+    <% @teacher.lessons.each do |lesson| %>
+      <div><h4><%= link_to "#{lesson.instrument.name}  |  #{lesson.genre.titleize}",  lesson %></h4></div>
+      <div><h4><%= lesson.difficulty.titleize %></h4></div>
+      <div><h4>$<%= lesson.cost %></h4></div>
+    <% end %>
+
+</div>
+<br>
+<h4>About</h4>
 <p><%= @teacher.bio %></p>
 
-<h2>Philosophy</h2>
+<br>
+
+<h4>Teaching Philosophy</h4>
 <p><%= @teacher.philosophy %></p>
 
-<h2>My Lessons:</h2>
 
-<table>
-  <tr>
-    <th>Instrument</th>
-    <th>Genre</th>
-    <th>Difficulty</th>
-  </tr>
-  <tr>
-    <% @teacher.lessons.each do |lesson| %>
-      <td><%= link_to lesson.instrument.name, lesson %></td>
-      <td><%= lesson.genre.titleize %></td>
-      <td><%= lesson.difficulty.titleize %></td>
-    <% end %>
-  </tr>
-</table>
+</div>
 
 
 <footer>
