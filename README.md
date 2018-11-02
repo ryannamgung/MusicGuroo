@@ -1,7 +1,7 @@
 # MusicGuroo
 
 ## DEMO
-[Demo Video](https://youtu.be/0lkSuFhv6Ik).
+[Demo Video](https://youtu.be/WLcLKTZ7yd8).
 
 ## Getting Started
 Clone the front end repository and run
