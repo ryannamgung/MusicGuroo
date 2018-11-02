@@ -1,52 +1,29 @@
-TO-DO:
-
-##--------TEACHER---------## DONE
-Full CRUD for teacher
-
-##--------STUDENT---------## DONE
-Full CRUD for student
-
-##--------INSTRUMENT---------##
-Teacher will be able to select which instruments they are using for their lesson
-If it doesn't exist then we specify "other"
-
-##--------LESSONS---------##
-Full CRUD for teacher
-Student only has access to R
-*TODO* pass in teacher_id through authentication somehow?????????
-
-##--------BOOKING---------##
-IDEALLY: teacher will be able to give an update of the available times they have
-Students create the booking and DESTROY
-////update the booking(change the booking schedule)
-
-##--------REVIEWS---------##
-Full CRUD for student
-Teacher can R
-
-
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 # MusicGuroo
+
+## DEMO
+[Demo Video](https://youtu.be/0lkSuFhv6Ik).
+
+## Getting Started
+Clone the front end repository and run
+- `bundle install`.
+
+### Local Installation
+
+Create a `.env` file in the root of this directory and set the API end point to a React environment variable.
+
+Example for Rails localhost port 3000:
+```
+REACT_APP_API_ENDPOINT='http://localhost:3000'
+```
+
+Run `rails s` to start the local Ruby on RAILS App.
+- Note, the port is set to 3000 in the package.json file but after running the RAILS API back end will default to 3001.
+
+## Built With
+
+* [Ruby on RAILS](https://guides.rubyonrails.org/getting_started.html) - The Ruby framework used
+
+## Contributing
+
+### Bug Reports & Feature Requests
+Please use the [issue tracker](https://github.com/ryannamgung/MusicGuroo/issues) to report any issues or feature requests.
